@@ -20,6 +20,7 @@ jobs:
       - name: Build swagger
         run: |
           make -C pkg/services/ngalert/api/tooling post.json api.json
+          make swagger-clean && make openapi3-gen
       - name: Open Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
